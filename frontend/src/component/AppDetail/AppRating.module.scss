@@ -1,0 +1,7 @@
+@import 'styles/function.scss';
+.rating {
+  display: inline;
+  font-size: 0.7rem;
+  margin-left: 5px;
+  color: getColor(black);
+}

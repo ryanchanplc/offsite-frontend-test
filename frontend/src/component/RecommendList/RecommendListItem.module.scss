@@ -1,0 +1,13 @@
+@import 'styles/vendor';
+.container {
+  margin: 10px;
+  width: 100px;
+  line-height: 70%;
+  @include vendor(align-items, flex-start);
+  display: inline-block;
+  overflow-wrap: break-word;
+}
+
+.details {
+  margin: 10px 5px;
+}

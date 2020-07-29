@@ -1,0 +1,60 @@
+@import 'styles/mixin';
+@import 'styles/function';
+@import 'styles/vendor';
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@mixin base {
+  padding: 10px;
+  margin: 10px;
+  border-bottom: 1px solid getColor(primary);
+  @include vendor(display, flex);
+  @include vendor(align-items, flex-start);
+  @include vendor(justify-content, space-between);
+  @content;
+}
+
+.row {
+  @include base {
+    opacity: 1;
+  }
+}
+.row_animate {
+  @include base {
+    opacity: 0;
+    animation: appear 1s ease-in-out forwards;
+  }
+}
+.index {
+  @include vendor(display, flex);
+  @include vendor(align-self, center);
+  @include vendor(justify-content, center);
+  width: 80px;
+  font-size: 1.4em;
+  font-weight: 300;
+}
+
+.detail {
+  @include vendor(display, flex);
+  @include vendor(flex-direction, column);
+  @include vendor(flex-wrap, nowrap);
+  @include vendor(align-items, stretch);
+  @include vendor(justify-content, space-around);
+  @include vendor(flex-grow, '8');
+  margin: 0px 15px;
+}

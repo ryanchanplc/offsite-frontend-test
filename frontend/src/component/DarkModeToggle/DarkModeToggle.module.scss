@@ -1,0 +1,5 @@
+@import 'styles/vendor';
+.toggle_wrapper {
+  @include vendor(align-self, center);
+  margin: 10px;
+}

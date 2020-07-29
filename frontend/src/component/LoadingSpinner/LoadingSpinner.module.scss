@@ -1,0 +1,11 @@
+@import 'styles/function';
+@import 'styles/variable';
+.spinner_wrapper {
+  margin: 15px auto;
+  text-align: center;
+  display: block;
+}
+
+.spinner {
+  stroke: getColor(base);
+}

@@ -1,0 +1,28 @@
+@import 'styles/vendor';
+@mixin icon {
+  @include vendor(flex-shrink, '0');
+  @include vendor(flex-grow, '0');
+
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+  @content;
+}
+.icon_wrapper {
+  @include icon {
+    @include vendor(align-self, center);
+  }
+}
+.icon_loading {
+  display: none;
+}
+.rounded {
+  @include icon {
+    border-radius: 10%;
+  }
+}
+.circle {
+  @include icon {
+    @include vendor(clip-path, circle(50px at center));
+  }
+}

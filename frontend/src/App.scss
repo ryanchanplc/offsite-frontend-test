@@ -1,0 +1,45 @@
+@import 'styles/mixin';
+@import 'styles/function';
+@import 'styles/variable';
+@import 'styles/vendor';
+:root {
+  @each $name, $color in $colors {
+    --color-#{$name}: #{$color};
+  }
+}
+html.dark {
+  @each $name, $color in $colors-dark {
+    --color-#{$name}: #{$color};
+  }
+}
+
+html {
+  background-color: getColor(bg);
+  color: getColor(base);
+}
+
+.app-title {
+  margin-bottom: 5px;
+  white-space: initial;
+  line-height: 120%;
+  width: 100%;
+  color: getColor(base);
+}
+.app-category {
+  margin: 5px 0px;
+  color: getColor(secondary);
+  white-space: initial;
+  font-weight: 250;
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+.switch-icon {
+  @include vendor(display, flex);
+  @include vendor(justify-content, center);
+  height: 100%;
+}
+
+.error-message {
+  margin: 15px;
+}

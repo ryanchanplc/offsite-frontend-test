@@ -1,0 +1,59 @@
+@import 'styles/function';
+@import 'styles/vendor';
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.section {
+  background-color: getColor(primary);
+  border-bottom: 1px solid grey;
+}
+
+.form {
+  padding: 15px;
+  overflow: hidden;
+  input {
+    border: 0px;
+    width: 100%;
+    height: 50px;
+    font-size: 1.2rem;
+    padding: 0 20px;
+    @include vendor(box-sizing, border-box);
+    border-radius: 10px;
+    color: getColor(base);
+    background-color: getColor(bg);
+    &:focus {
+      outline: none;
+    }
+    &::-webkit-input-placeholder {
+      text-align: center;
+      color: getColor(secondary);
+    }
+    &::-moz-placeholder {
+      text-align: center;
+      color: getColor(secondary);
+    }
+    &:-ms-input-placeholder {
+      text-align: center;
+      color: getColor(secondary);
+    }
+    &::-ms-input-placeholder {
+      text-align: center;
+      color: getColor(secondary);
+    }
+    &::placeholder {
+      text-align: center;
+      color: getColor(secondary);
+    }
+    &::-webkit-search-cancel-button {
+      color: getColor(base);
+    }
+    &::-ms-clear {
+      color: getColor(base);
+    }
+  }
+}

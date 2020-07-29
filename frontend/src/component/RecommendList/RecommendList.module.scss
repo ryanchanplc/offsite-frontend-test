@@ -1,0 +1,24 @@
+@import 'styles/vendor';
+.horizontal_scroll {
+  white-space: nowrap;
+  @include vendor(display, flex);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.section {
+  padding: 15px 0px;
+  &_title_wrapper {
+    padding: 0px 15px;
+    @include vendor(display, flex);
+    @include vendor(justify-content, space-between);
+  }
+  &_title {
+    margin: 10px 0px;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}

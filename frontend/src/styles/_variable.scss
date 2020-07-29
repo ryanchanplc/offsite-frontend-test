@@ -1,0 +1,13 @@
+$colors: (
+  base: black,
+  primary: lightgrey,
+  secondary: #484848,
+  bg: white,
+);
+
+$colors-dark: (
+  base: map-get($colors, bg),
+  primary: map-get($colors, secondary),
+  secondary: map-get($colors, primary),
+  bg: map-get($colors, base),
+);
