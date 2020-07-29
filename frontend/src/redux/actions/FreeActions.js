@@ -31,7 +31,6 @@ export const getFreeSingle = (appid, detail) => {
 }
 
 export function fetchFreeList(page = 1) {
-  console.log(page)
   const count = page * 10
 
   return (dispatch) => {
