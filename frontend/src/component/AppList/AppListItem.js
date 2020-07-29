@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchFreeSingle } from 'redux/actions/FreeActions'
 import AppThumbnail from 'component/AppDetail/AppThumbnail'
 import AppRating from 'component/AppDetail/AppRating'
-// import ScrollAnimation from 'react-animate-on-scroll'
 import style from './AppListItem.module.scss'
 function AppListItem({ appId, index, isAnimated }) {
   const detail = useSelector((state) =>
@@ -16,11 +15,6 @@ function AppListItem({ appId, index, isAnimated }) {
   }, [appId, dispatch])
 
   return (
-    // <ScrollAnimation
-    //   animateIn="animate__fadeInLeft"
-    //   animateOnce={true}
-    //   offset={300}
-    // >
     <div className={isAnimated ? style.row_animate : style.row}>
       <div className={style.index}>{index}</div>
       <AppThumbnail
@@ -41,8 +35,6 @@ function AppListItem({ appId, index, isAnimated }) {
         />
       </div>
     </div>
-
-    // </ScrollAnimation>
   )
 }
 

@@ -9,11 +9,10 @@ export const getFreeList = () => {
   }
 }
 
-export const getFreeSuccess = (apps, page) => {
+export const getFreeSuccess = (apps) => {
   return {
     type: FETCH_FREE_SUCCESS,
     payload: apps,
-    page: page,
   }
 }
 
@@ -32,6 +31,7 @@ export const getFreeSingle = (appid, detail) => {
 }
 
 export function fetchFreeList(page = 1) {
+  console.log(page)
   const count = page * 10
 
   return (dispatch) => {
@@ -43,7 +43,7 @@ export function fetchFreeList(page = 1) {
           item['index'] = index + 1
           return item
         })
-        dispatch(getFreeSuccess(res.feed.results, page))
+        dispatch(getFreeSuccess(res.feed.results))
       })
       .catch((error) => {
         console.error(error)

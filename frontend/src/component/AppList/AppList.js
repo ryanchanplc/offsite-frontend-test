@@ -16,9 +16,9 @@ function AppList({
   isSearching,
   lastPage,
 }) {
-  useEffect(() => {
-    fetchFreeList()
-  }, [fetchFreeList])
+  // useEffect(() => {
+  //   fetchFreeList(lastPage)
+  // }, [fetchFreeList])
 
   const loadMore = (page) => {
     if (!isLoading && !isSearching) fetchFreeList(page)
