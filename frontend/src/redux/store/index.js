@@ -17,7 +17,7 @@ const persistConfig = {
   key: 'root',
   storage: storage,
   stateReconciler: autoMergeLevel2,
-  blacklist: ['search'],
+  blacklist: ['search', 'free', 'recommends'],
 }
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
