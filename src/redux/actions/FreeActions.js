@@ -2,7 +2,7 @@ import { FETCH_FREE_LIST } from './Types'
 import { FETCH_FREE_SINGLE } from './Types'
 import { FETCH_FREE_SUCCESS } from './Types'
 import { FETCH_FREE_ERROR } from './Types'
-import * as constant from 'utils/Const'
+
 export const getFreeList = () => {
   return {
     type: FETCH_FREE_LIST,
@@ -35,7 +35,7 @@ export function fetchFreeList(page = 1) {
 
   return (dispatch) => {
     dispatch(getFreeList())
-    fetch(constant.API_ENDPOINT_FREE_LIST + count + '/explicit.json')
+    fetch(process.env.REACT_APP_FREE_LIST + count + '/explicit.json')
       .then((response) => response.json())
       .then((res) => {
         res.feed.results.map(function (item, index) {
@@ -53,7 +53,7 @@ export function fetchFreeList(page = 1) {
 
 export function fetchFreeSingle(appid) {
   return (dispatch) => {
-    fetch(constant.API_ENDPOINT_DETAIL + appid)
+    fetch(process.env.REACT_APP_API_ENDPOINT_DETAIL + appid)
       .then((response) => response.json())
       .then((res) => {
         dispatch(getFreeSingle(appid, res.results[0]))

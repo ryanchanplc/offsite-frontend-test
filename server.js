@@ -1,14 +1,15 @@
 var express = require('express')
 const { createProxyMiddleware } = require('http-proxy-middleware')
-var env = require('dotenv').config()
+const port = process.env.PORT || 3000
 var cors = require('cors')
 var path = require('path')
 var app = express()
+require('dotenv').config()
 app.use(cors())
-app.use(express.static(path.join(__dirname, '../frontend/build')))
+app.use(express.static(path.join(__dirname, './build')))
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'))
+  res.sendFile(path.join(__dirname, './build', 'index.html'))
 })
 
 app.use(
@@ -29,6 +30,6 @@ app.use(
   })
 )
 
-app.listen(3001, function () {
-  console.log('Server running on PORT 3001')
+app.listen(port, function () {
+  console.log('Server running on PORT ' + port)
 })

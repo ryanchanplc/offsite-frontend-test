@@ -7,25 +7,8 @@
 ## Run in development mode.
 
 ```javascript
-cd frontend
-yarn //npm install
-yarn start //npm run start
+yarn
+yarn start:dev
 ```
 
 visit `http://localhost:3000/`
-
-## Test PWA
-
-build the app and start the server under `pwa-test-server` folder
-
-```javascript
-cd frontend
-yarn build
-cd ..
-
-cd pwa-test-server
-yarn
-yarn start
-```
-
-visit `http://localhost:3001/`
